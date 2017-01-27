@@ -1,2 +1,2 @@
-15  10  *  *  * bash ~/scripts/clear-screenshots.sh
-45  4 * * 5 bash ~/scripts/clear-temp.sh
+15  10  *  *  * bash ~/scripts/clear-screenshots/clear-screenshots.sh
+45  4 * * 5 bash ~/scripts/clear-temp-folder/clear-temp.sh
