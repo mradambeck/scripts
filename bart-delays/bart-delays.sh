@@ -15,15 +15,13 @@ if [[ $THISHOURSEARCH || $LASTHOURSEARCH ]] ; then
   else
     CONTENT=$LASTHOURSEARCH
   fi
-  curl -XPOST https://api.twilio.com/2010-04-01/Accounts/ACff0e5a19d48a7721c2b64dad09f7552c/Messages.json \
-      --data-urlencode "Body=$BODY $CONTENT" \
-      --data-urlencode "To=+15108278322" \
-      --data-urlencode "From=+16506514518" \
-      -u $TWILIO_ID':'$TWILIO_SECRET
+  TEXT=$CONTENT
 else
-  curl -XPOST https://api.twilio.com/2010-04-01/Accounts/ACff0e5a19d48a7721c2b64dad09f7552c/Messages.json \
-      --data-urlencode "Body=$BODY Don't have a cow, man! Bart is running fine!" \
-      --data-urlencode "To=+15108278322" \
-      --data-urlencode "From=+16506514518" \
-      -u $TWILIO_ID':'$TWILIO_SECRET
+  TEXT="Don't have a cow, man! Bart is running fine!"
 fi
+
+curl -XPOST https://api.twilio.com/2010-04-01/Accounts/ACff0e5a19d48a7721c2b64dad09f7552c/Messages.json \
+    --data-urlencode "Body=$BODY $TEXT" \
+    --data-urlencode "To=$MY_NUMBER" \
+    --data-urlencode "From=$TWILIO_NUMBER" \
+    -u $TWILIO_ID':'$TWILIO_SECRET
