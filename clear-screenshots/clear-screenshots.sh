@@ -1,2 +1,2 @@
 # deletes screenshots - run via CRON job
-rm -rf ~/Screenshots/*
+exec rm -rf ~/Screenshots/*
