@@ -1,9 +1,9 @@
 #!/bin/bash
-t timeline sfbartalert -n 10 --csv > ~/Scripts/bart-delays/timeline.csv
+t timeline sfbartalert -n 10 --csv > ~/scripts/bart-delays/timeline.csv
 
 TODAYSDATE=$(date '+%y'-'%m'-'%d')
-THISHOURSEARCH=$(grep -E 20$TODAYSDATE.*' '`date '+%H':` ~/Scripts/bart-delays/timeline.csv)
-LASTHOURSEARCH=$(grep -E 20$TODAYSDATE.*' '`date -v -1H '+%H:'` ~/Scripts/bart-delays/timeline.csv)
+THISHOURSEARCH=$(grep -E 20$TODAYSDATE.*' '`date '+%H':` ~/scripts/bart-delays/timeline.csv)
+LASTHOURSEARCH=$(grep -E 20$TODAYSDATE.*' '`date -v -1H '+%H:'` ~/scripts/bart-delays/timeline.csv)
 
 BODY="https://twitter.com/SFBARTalert :: "
 
