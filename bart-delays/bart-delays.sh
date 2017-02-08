@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 /Users/adambeck/.rvm/gems/ruby-2.3.3/wrappers/t timeline sfbartalert -n 10 --csv > ~/scripts/bart-delays/timeline.csv
 
-TODAYSDATE=$(date '+%y'-'%m'-'%d')
-THISHOURSEARCH=$(grep -E 20$TODAYSDATE.*' '`date '+%H':` ~/scripts/bart-delays/timeline.csv)
-LASTHOURSEARCH=$(grep -E 20$TODAYSDATE.*' '`date -v -1H '+%H:'` ~/scripts/bart-delays/timeline.csv)
+TODAYSDATE=$(date -u '+%y'-'%m'-'%d')
+THISHOURSEARCH=$(grep -E 20$TODAYSDATE.*' '`date -u '+%H':` ~/scripts/bart-delays/timeline.csv)
+LASTHOURSEARCH=$(grep -E 20$TODAYSDATE.*' '`date -u -v -1H '+%H:'` ~/scripts/bart-delays/timeline.csv)
 
 BODY="https://twitter.com/SFBARTalert :: "
-
 
 if [[ $THISHOURSEARCH || $LASTHOURSEARCH ]] ; then
   # text me that theres a bart delay
