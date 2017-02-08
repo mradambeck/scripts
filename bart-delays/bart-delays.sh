@@ -1,5 +1,5 @@
-#!/bin/bash
-t timeline sfbartalert -n 10 --csv > ~/scripts/bart-delays/timeline.csv
+#!/usr/bin/env bash
+/Users/adambeck/.rvm/gems/ruby-2.3.3/wrappers/t timeline sfbartalert -n 10 --csv > ~/scripts/bart-delays/timeline.csv
 
 TODAYSDATE=$(date '+%y'-'%m'-'%d')
 THISHOURSEARCH=$(grep -E 20$TODAYSDATE.*' '`date '+%H':` ~/scripts/bart-delays/timeline.csv)
