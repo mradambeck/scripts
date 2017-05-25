@@ -1,0 +1,13 @@
+{
+  "name"          : "scraper",
+  "version"       : "0.0.1",
+  "description"   : "Just learning how to scrape",
+  "main"          : "scrape.js",
+  "author"        : "yr mom",
+  "dependencies": {
+    "express"   : "latest",
+    "superagent": "latest",
+    "cheerio"   : "latest",
+    "request"   : "latest"
+  }
+}

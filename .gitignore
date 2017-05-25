@@ -2,3 +2,5 @@
 .env
 *.log
 timeline.csv
+*/node_modules
+fixie.json
