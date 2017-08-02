@@ -1,5 +1,5 @@
 #!/bin/bash
-# optimize MYJPEGNAME.jpg
+# optimize.sh MYJPEGNAME.jpg
 FILE=$1
 if [ ${FILE: -4} == ".jpg" ]
 then
